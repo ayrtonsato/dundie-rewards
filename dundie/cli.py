@@ -1,11 +1,12 @@
 import argparse
+
 from dundie.core import load  # noqa
 
 
 def main():
     parser = argparse.ArgumentParser(
         description="Dunder Mifflin Rewards CLI",
-        epilog="Enjoy and use with cautious"
+        epilog="Enjoy and use with cautious",
     )
     parser.add_argument(
         "subcommand",

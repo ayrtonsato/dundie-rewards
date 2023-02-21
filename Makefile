@@ -1,4 +1,4 @@
-.PHONY: install virtualenv ipython clean test watch lint
+.PHONY: install virtualenv ipython clean test watch lint fmt
 
 install:
 	@echo "Installing for dev environment"
@@ -19,6 +19,10 @@ watch:
 
 lint:
 	@.venv/bin/pflake8
+
+fmt:
+	@.venv/bin/isort dundie tests integration
+	@.venv/bin/black dundie tests integration
 
 clean:            ## Clean unused files.
 	@find ./ -name '*.pyc' -exec rm -f {} \;
