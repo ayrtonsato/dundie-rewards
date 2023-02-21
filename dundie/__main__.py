@@ -1,4 +1,5 @@
+from dundie.cli import main
 
 
-def main():
-    print("Executing dundie from entrypoint")
+if __name__ == "__main__":
+    main()
