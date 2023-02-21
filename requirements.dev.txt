@@ -1,0 +1,4 @@
+ipython>=8.0.1
+ipdb
+pudb
+pytest-watch
