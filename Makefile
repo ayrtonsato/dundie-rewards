@@ -1,4 +1,4 @@
-.PHONY: install virtualenv ipython clean test
+.PHONY: install virtualenv ipython clean test watch lint
 
 install:
 	@echo "Installing for dev environment"
@@ -16,6 +16,9 @@ test:
 watch:
 	#@@.venv/bin/ptw
 	@ls **/*.py | entr pytest
+
+lint:
+	@.venv/bin/pflake8
 
 clean:            ## Clean unused files.
 	@find ./ -name '*.pyc' -exec rm -f {} \;
