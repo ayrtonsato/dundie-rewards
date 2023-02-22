@@ -2,10 +2,10 @@
 
 install:
 	@echo "Installing for dev environment"
-	@.venv/bin/python -m pip install -e '.[dev]'
+	@.venv/bin/python -m pip install -e '.[test,dev]'
 
 virtualenv:
-	@.venv/bin/python -m pip -m venv .venv
+	@python3 -m venv .venv
 
 ipython:
 	@.venv/bin/ipython
