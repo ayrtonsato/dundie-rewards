@@ -34,13 +34,14 @@ def load(filepath):
     - Loads to database
     """
     table = Table(title="Dundie Mifflin Associates")
-    headers = ["name", "dept", "role", "e-mail"]
+    headers = ["name", "dept", "role", "created", "e-mail"]
     for header in headers:
         table.add_column(header, style="magenta")
 
     result = core.load(filepath)
     for person in result:
-        table.add_row(*[field.strip() for field in person.split(",")])
+        values = [str(value) for value in person.values()]
+        table.add_row(*values)
 
     console = Console()
     console.print(table)
