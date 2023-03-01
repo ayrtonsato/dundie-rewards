@@ -13,7 +13,7 @@ fmt = logging.Formatter(
 def get_logger(logfile="dundie.log"):
     """Returns a configured logger"""
     fh = handlers.RotatingFileHandler(
-        logfile, maxBytes=100, backupCount=10  # 10 ** 6
+        logfile, maxBytes=10000, backupCount=10  # 10 ** 6
     )
     fh.setLevel(LOG_LEVEL)
     fh.setFormatter(fmt)

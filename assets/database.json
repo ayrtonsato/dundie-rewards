@@ -17,8 +17,8 @@
         }
     },
     "balance": {
-        "jim@dundlermifflin.com": 500,
-        "schurte@dundlermifflin.com": 100,
+        "jim@dundlermifflin.com": 830,
+        "schurte@dundlermifflin.com": 430,
         "glewis@dundlermifflin.com": 500
     },
     "movement": {
@@ -27,6 +27,11 @@
                 "date": "2023-02-28T19:33:28.761137",
                 "actor": "system",
                 "value": 500
+            },
+            {
+                "date": "2023-02-28T21:46:42.995290",
+                "actor": "ayrtonsato",
+                "value": 330
             }
         ],
         "schurte@dundlermifflin.com": [
@@ -34,6 +39,11 @@
                 "date": "2023-02-28T19:33:28.764796",
                 "actor": "system",
                 "value": 100
+            },
+            {
+                "date": "2023-02-28T21:46:42.995300",
+                "actor": "ayrtonsato",
+                "value": 330
             }
         ],
         "glewis@dundlermifflin.com": [
