@@ -2,26 +2,26 @@
 
 install:
 	@echo "Installing for dev environment"
-	@.venv/bin/python -m pip install -e '.[dev]'
+	@.venv/bin/python -m pip install -e '.[test,dev]'
 
 virtualenv:
-	@.venv/bin/python -m pip -m venv .venv
+	@python3 -m venv .venv
 
 ipython:
 	@.venv/bin/ipython
 
 test:
-	@.venv/bin/pytest -s
+	@.venv/bin/pytest -s --forked
 
 watch:
 	#@@.venv/bin/ptw
-	@ls **/*.py | entr pytest
+	@ls **/*.py | entr pytest --forked
 
 lint:
 	@.venv/bin/pflake8
 
 fmt:
-	@.venv/bin/isort dundie tests integration
+	@.venv/bin/isort --profile=black -m 3 dundie tests integration
 	@.venv/bin/black dundie tests integration
 
 clean:            ## Clean unused files.
