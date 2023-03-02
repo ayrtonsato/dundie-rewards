@@ -1,4 +1,4 @@
-.PHONY: install virtualenv ipython clean test watch lint fmt
+.PHONY: install virtualenv ipython clean test watch lint fmt build publish-test publish
 
 install:
 	@echo "Installing for dev environment"
@@ -38,3 +38,12 @@ clean:            ## Clean unused files.
 	@rm -rf htmlcov
 	@rm -rf .tox/
 	@rm -rf docs/_build
+
+build:
+	@python setup.py sdist bdist_wheel
+
+publish-test:
+	@twine upload --repository testpypi dist/* --verbose
+
+publish:
+	@twine upload dist/*
