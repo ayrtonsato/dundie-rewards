@@ -36,7 +36,7 @@ def load(filepath):
     - Loads to database
     """
     table = Table(title="Dundie Mifflin Associates")
-    headers = ["name", "dept", "role", "created", "e-mail"]
+    headers = ["email", "name", "dept", "role", "created"]
     for header in headers:
         table.add_column(header, style="magenta")
 
@@ -78,8 +78,9 @@ def show(output, **query):
 @click.argument("value", type=click.INT, required=True)
 @click.option("--dept", required=False)
 @click.option("--email", required=False)
+@click.pass_context
 def add(ctx, value, **query):
-    """Add points to the user or dept"""
+    """Add points to the user or dept."""
     core.add(value, **query)
     ctx.invoke(show, **query)
 
