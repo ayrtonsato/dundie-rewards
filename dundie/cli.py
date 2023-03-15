@@ -68,6 +68,7 @@ def show(output, **query):
         table.add_column(key.title(), style="magenta")
 
     for person in result:
+        person["value"] = f"{person['value']:.2f}"
         table.add_row(*[str(value) for value in person.values()])
 
     console = Console()
