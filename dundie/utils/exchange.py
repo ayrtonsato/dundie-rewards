@@ -1,8 +1,10 @@
-import httpx
 from decimal import Decimal
-from typing import List, Dict
-from dundie.settings import API_BASE_URL
+from typing import Dict, List
+
+import httpx
 from pydantic import BaseModel, Field
+
+from dundie.settings import API_BASE_URL
 
 
 class USDRate(BaseModel):
