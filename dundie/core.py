@@ -25,13 +25,13 @@ def load(filepath):
         log.error(str(e))
         raise e
     people = []
-    headers = ["name", "dept", "role", "email"]
+    headers = ["name", "dept", "role", "email", "currency"]
     with get_session() as session:
         for line in csv_data:
             person_data = dict(zip(headers, [item.strip() for item in line]))
             instance = Person(**person_data)
             person, created = add_person(session, instance)
-            return_data = person.dict(exclude={"pk"})
+            return_data = person.dict(exclude={"id"})
             return_data["created"] = created
             people.append(return_data)
         session.commit()
